@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bloomer": "^0.6.2",
+    "bulma": "^0.6.1",
+    "font-awesome": "^4.7.0",
+    "re-bulma": "^0.4.6",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "react-scripts": "1.0.17"
+    "react-flexbox-grid": "^2.0.0",
+    "react-fontawesome": "^1.6.1",
+    "react-scripts": "1.0.17",
+    "reactbulma": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
