@@ -5,6 +5,7 @@ import 'font-awesome/css/font-awesome.css'
 import headshot_far from './res/headshot_far.JPG';
 import headshot_close from './res/headshot_close.JPG';
 import headshot_med from './res/headshot_med.JPG';
+import CV from './res/CV_11_13_17.pdf';
 import {Icon, Button, Navbar, NavbarStart, NavbarEnd, NavbarItem, NavbarMenu, NavbarBrand } from 'bloomer';
 import {Columns, Column, Notification, Container} from 'bloomer';
 import {Hero, HeroHeader, HeroBody, Title, Subtitle} from 'bloomer';
@@ -90,6 +91,7 @@ class App extends Component {
           </Col>
           <Col md={6}>
             <Title> High Rate Description </Title>
+            <Subtitle> See <a href={CV}> this </a> or contact Vinith. </Subtitle>
           </Col>
        </Row>
      </Grid>;
