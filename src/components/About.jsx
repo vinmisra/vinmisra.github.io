@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import headshot_far from './res/headshot_far.JPG';
-import headshot_close from './res/headshot_close.JPG';
-import headshot_med from './res/headshot_med.JPG';
-import CV from './res/CV_11_13_17.pdf';
+import headshot_far from '../res/headshot_far.JPG';
+import headshot_close from '../res/headshot_close.JPG';
+import headshot_med from '../res/headshot_med.JPG';
+import CV from '../res/CV_11_13_17.pdf';
 
+import {Columns, Column, Notification, Container} from 'bloomer';
+import {Hero, HeroHeader, HeroBody, Title, Subtitle} from 'bloomer';
+import {Content} from 'bloomer';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 export class AboutBody extends Component {

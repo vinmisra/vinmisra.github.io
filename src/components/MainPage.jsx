@@ -1,47 +1,62 @@
 import React, { Component } from 'react';
-import headshot_far from './res/headshot_far.JPG';
-import headshot_close from './res/headshot_close.JPG';
-import headshot_med from './res/headshot_med.JPG';
-import CV from './res/CV_11_13_17.pdf';
+import PropTypes from 'prop-types';
 
+import {Icon, Button, Navbar, NavbarStart, NavbarEnd, NavbarItem, NavbarMenu, NavbarBrand } from 'bloomer';
+import {Columns, Column, Notification, Container} from 'bloomer';
+import {Hero, HeroHeader, HeroBody, Title, Subtitle} from 'bloomer';
+import {Content} from 'bloomer';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-class AboutBody extends Component {
-  render() {
-    const aboutBody =
-    <Grid fluid>
-       <Row style={{marginTop:"100px"}}>
-          <Col md={3} style={{}}>
-            <img src={headshot_far} style={{margin: "auto", display: "block", borderRadius:"50%", width:"50%"}}/>
-          </Col>
-          <Col md={6}>
-            <Title> Low Rate Description </Title>
-            <Subtitle> Vinith is a "data scientist" at Netflix. </Subtitle>
-          </Col>
-       </Row>
-       <Row style={{marginTop:"100px"}}>
-          <Col md={3} style={{}}>
-            <img src={headshot_med} style={{margin: "auto", display: "block", borderRadius:"50%", width:"50%"}}/>
-          </Col>
-          <Col md={6}>
-            <Title> Medium Rate Description </Title>
-            <Subtitle> Vinith fiddles with data science, machine learning,
-            natural language, optimization, and other buzzwords at Netflix.
-            He was previously a "research staff member" at IBM Watson.
-            </Subtitle>
-          </Col>
-       </Row>
-       <Row style={{marginTop:"100px"}}>
-          <Col md={3} style={{}}>
-            <img src={headshot_close} style={{margin: "auto", display: "block", borderRadius:"50%", width:"50%"}}/>
-          </Col>
-          <Col md={6}>
-            <Title> High Rate Description </Title>
-            <Subtitle> See <a href={CV}> this </a> or contact Vinith. </Subtitle>
-          </Col>
-       </Row>
-     </Grid>;
+import {AboutBody} from './About.jsx';
+import {DogBody} from './Dog.jsx';
+import {Header} from './Header.jsx';
+import {WorkGraph} from './WorkGraph.jsx';
 
-     return(aboutBody);
+export class TestMainPage extends Component {
+  render() {
+    return(
+      <MainPage
+        pageBody={<WorkGraph/>}
+        onNavClick={(selectedLink)=>console.log(selectedLink)}
+      />
+    )
   }
 }
+
+export class MainPage extends Component {
+  static propTypes = {
+    pageBody: PropTypes.object.isRequired,
+    onNavClick: PropTypes.func.isRequired
+  }
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+          <Header
+            onNavClick={this.props.onNavClick}
+          />
+          {this.props.pageBody}
+      </div>
+    );
+  }
+}
+
+
+
+
+// <Grid fluid>
+//   <Row>
+//     <Col xs={6} md={3}>
+//       Hello, world!
+//     </Col>
+//   </Row>
+// </Grid>
+
+// <Container hasTextAlign='centered'>
+//
+//     <img src={headshot} style={{borderRadius:"50%"}}/>
+//     <Title></Title>
+// </Container>
+// <img src={headshot} style={{ marginRight: 5, borderRadius:"50%", height:"150%" }} />
